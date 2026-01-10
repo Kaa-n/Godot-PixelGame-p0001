@@ -1,0 +1,24 @@
+[gd_scene load_steps=3 format=3 uid="uid://cca301htymmdn"]
+
+[ext_resource type="Script" path="res://GUI/player_hud/hunger_gui.gd" id="1_1sj88"]
+[ext_resource type="Texture2D" uid="uid://dh340swu6ann0" path="res://GUI/player_hud/gui_hunger.png" id="1_dgn6p"]
+
+[node name="HungerGui" type="Control"]
+custom_minimum_size = Vector2(9, 12)
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_1sj88")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(-1.19209e-07, 0)
+scale = Vector2(1.33333, 1.4514)
+texture = ExtResource("1_dgn6p")
+centered = false
+hframes = 7
+vframes = 2
+region_rect = Rect2(94, 139, 258, 151)

@@ -1,0 +1,72 @@
+[gd_scene load_steps=7 format=3 uid="uid://cj28m68mqyawi"]
+
+[ext_resource type="Script" path="res://Items/item_pickup/item_pickup.gd" id="1_5rn55"]
+[ext_resource type="AudioStream" uid="uid://b43h4sdh220sn" path="res://Items/item_pickup/item_pickup.wav" id="2_3swqs"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_d4a44"]
+
+[sub_resource type="Animation" id="Animation_80x5u"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_ngjv3"]
+resource_name = "default"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.566667, 0.7, 0.8, 0.9),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, -6), Vector2(0, 0), Vector2(0, -6), Vector2(0, 0), Vector2(0, -6), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_eunkf"]
+_data = {
+"RESET": SubResource("Animation_80x5u"),
+"default": SubResource("Animation_ngjv3")
+}
+
+[node name="ItemPickup" type="CharacterBody2D"]
+collision_layer = 0
+collision_mask = 64
+motion_mode = 1
+script = ExtResource("1_5rn55")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_d4a44")
+
+[node name="ItemArea" type="Area2D" parent="."]
+modulate = Color(0.0859854, 0.997088, 0.0847866, 1)
+collision_layer = 16
+collision_mask = 16
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ItemArea"]
+shape = SubResource("CircleShape2D_d4a44")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+
+[node name="ShadowSprite" type="Sprite2D" parent="."]
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_3swqs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_eunkf")
+}
+autoplay = "default"

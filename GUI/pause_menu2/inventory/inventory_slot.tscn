@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://ble6gvoeueeep"]
+
+[ext_resource type="Script" path="res://GUI/pause_menu2/inventory/scripts/inventory_slot_ui.gd" id="1_1fio8"]
+[ext_resource type="Texture2D" uid="uid://dxn6qw4s0u4n5" path="res://Items/sprites/EmptyPot.png" id="1_4inoj"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gvwly"]
+atlas = ExtResource("1_4inoj")
+
+[node name="InventorySlot" type="Button"]
+custom_minimum_size = Vector2(32, 32)
+offset_right = 32.0
+offset_bottom = 32.0
+script = ExtResource("1_1fio8")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 32.0
+offset_bottom = 32.0
+texture = SubResource("AtlasTexture_gvwly")
+stretch_mode = 3
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 30.0
+offset_bottom = 23.0
+theme_override_font_sizes/font_size = 8
+text = "99"
+horizontal_alignment = 2

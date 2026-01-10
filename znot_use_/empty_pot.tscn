@@ -1,0 +1,17 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1k8jkxud6ba"]
+
+[ext_resource type="PackedScene" uid="uid://cctguva84g187" path="res://znot_use_/collectable.tscn" id="1_tf7gr"]
+[ext_resource type="Texture2D" uid="uid://cvjpqkhu4ua6n" path="res://znot_use_/assets/EmptyPot.png" id="2_36kca"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_niby4"]
+resource_local_to_scene = true
+size = Vector2(8, 11)
+
+[node name="EmptyPot" instance=ExtResource("1_tf7gr")]
+
+[node name="CollisionShape2D" parent="." index="0"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_niby4")
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_36kca")

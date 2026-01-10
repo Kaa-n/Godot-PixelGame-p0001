@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=5 format=3 uid="uid://d3jfhvw41o077"]
+
+[ext_resource type="Script" path="res://Items/item_effects/item_effect.gd" id="1_6h0m6"]
+[ext_resource type="Script" path="res://Items/scripts/item_data.gd" id="1_c3681"]
+[ext_resource type="Texture2D" uid="uid://bd2ly1a0u2mle" path="res://Items/sprites/WaterPot.png" id="2_06mhf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_edqlr"]
+atlas = ExtResource("2_06mhf")
+
+[resource]
+script = ExtResource("1_c3681")
+name = "water_bottle"
+description = "rain water in the bottle"
+texture = SubResource("AtlasTexture_edqlr")
+effects = Array[ExtResource("1_6h0m6")]([])

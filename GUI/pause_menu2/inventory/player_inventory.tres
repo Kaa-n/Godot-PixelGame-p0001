@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="InventoryData" load_steps=5 format=3 uid="uid://bpsfq7p0vhnep"]
+
+[ext_resource type="Script" path="res://GUI/pause_menu2/inventory/scripts/inventory_data.gd" id="1_hpaue"]
+[ext_resource type="Script" path="res://GUI/pause_menu2/inventory/scripts/slot_data.gd" id="2_tlbbm"]
+[ext_resource type="Resource" uid="uid://c6h63i0kcdhes" path="res://Items/empty_bottle.tres" id="3_ksnbg"]
+
+[sub_resource type="Resource" id="Resource_q73n0"]
+script = ExtResource("2_tlbbm")
+item_data = ExtResource("3_ksnbg")
+quantity = 1
+
+[resource]
+script = ExtResource("1_hpaue")
+slots = Array[ExtResource("2_tlbbm")]([SubResource("Resource_q73n0"), null, null, null, null, null, null, null, null, null])

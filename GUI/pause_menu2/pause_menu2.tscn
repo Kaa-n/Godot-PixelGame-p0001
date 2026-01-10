@@ -1,0 +1,104 @@
+[gd_scene load_steps=7 format=3 uid="uid://cp6t0cemaafjm"]
+
+[ext_resource type="Script" path="res://GUI/pause_menu2/pause_menu2.gd" id="1_y8dkj"]
+[ext_resource type="Texture2D" uid="uid://djbpemgyiji1a" path="res://GUI/pause_menu2/InventoryRect.png" id="2_in2ns"]
+[ext_resource type="Script" path="res://GUI/pause_menu2/inventory/scripts/inventory_ui.gd" id="3_8n4uv"]
+[ext_resource type="PackedScene" uid="uid://ble6gvoeueeep" path="res://GUI/pause_menu2/inventory/inventory_slot.tscn" id="3_umngp"]
+[ext_resource type="Resource" uid="uid://bpsfq7p0vhnep" path="res://GUI/pause_menu2/inventory/player_inventory.tres" id="4_u1jgn"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_d4m4q"]
+content_margin_left = 10.0
+content_margin_top = 10.0
+content_margin_right = 10.0
+content_margin_bottom = 10.0
+texture = ExtResource("2_in2ns")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+
+[node name="PauseMenu2" type="CanvasLayer"]
+process_mode = 3
+script = ExtResource("1_y8dkj")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.721)
+
+[node name="PanelContainer" type="PanelContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -1.0
+offset_top = -91.0
+offset_right = 195.0
+offset_bottom = -3.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_d4m4q")
+
+[node name="GridContainer" type="GridContainer" parent="Control/PanelContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+columns = 5
+script = ExtResource("3_8n4uv")
+data = ExtResource("4_u1jgn")
+
+[node name="InventorySlot7" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_umngp")]
+layout_mode = 2
+
+[node name="InventorySlot" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_umngp")]
+layout_mode = 2
+
+[node name="InventorySlot2" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_umngp")]
+layout_mode = 2
+
+[node name="InventorySlot3" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_umngp")]
+layout_mode = 2
+
+[node name="InventorySlot4" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_umngp")]
+layout_mode = 2
+
+[node name="InventorySlot5" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_umngp")]
+layout_mode = 2
+
+[node name="InventorySlot6" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_umngp")]
+layout_mode = 2
+
+[node name="InventorySlot8" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_umngp")]
+layout_mode = 2
+
+[node name="InventorySlot9" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_umngp")]
+layout_mode = 2
+
+[node name="InventorySlot10" parent="Control/PanelContainer/GridContainer" instance=ExtResource("3_umngp")]
+layout_mode = 2
+
+[node name="ItemDescripsion" type="Label" parent="Control"]
+modulate = Color(0.492237, 0.492237, 0.492237, 1)
+layout_mode = 0
+offset_left = 55.0
+offset_top = 50.0
+offset_right = 218.0
+offset_bottom = 98.0
+theme_override_font_sizes/font_size = 10
+autowrap_mode = 2
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Control"]
+max_polyphony = 4

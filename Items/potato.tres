@@ -1,0 +1,23 @@
+[gd_resource type="Resource" script_class="ItemData" load_steps=8 format=3 uid="uid://jngx5thm1d1v"]
+
+[ext_resource type="Script" path="res://Items/scripts/item_data.gd" id="1_huhg3"]
+[ext_resource type="Script" path="res://Items/item_effects/item_effect.gd" id="1_nmhc7"]
+[ext_resource type="Script" path="res://Items/item_effects/item_effect_eat.gd" id="2_asrps"]
+[ext_resource type="Texture2D" uid="uid://dkocwjb0nyyqa" path="res://Items/sprites/Potato (1).png" id="2_wy0cs"]
+[ext_resource type="AudioStream" uid="uid://cjoy5w0ni0r1x" path="res://Items/item_effects/hp-up.wav" id="3_cs728"]
+
+[sub_resource type="Resource" id="Resource_vto4x"]
+script = ExtResource("2_asrps")
+eat_amount = 1
+audio = ExtResource("3_cs728")
+use_description = ""
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vdr5h"]
+atlas = ExtResource("2_wy0cs")
+
+[resource]
+script = ExtResource("1_huhg3")
+name = "potato"
+description = "The only one food"
+texture = SubResource("AtlasTexture_vdr5h")
+effects = Array[ExtResource("1_nmhc7")]([SubResource("Resource_vto4x")])

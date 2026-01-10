@@ -1,0 +1,7 @@
+[gd_scene load_steps=2 format=3 uid="uid://2qrw74t1vb38"]
+
+[ext_resource type="TileSet" uid="uid://dfcpw22qjhao8" path="res://Tile Maps/Pixelart-loteng1.tres" id="1_hqdtb"]
+
+[node name="Pixelart-loteng1" type="TileMapLayer"]
+z_index = -1
+tile_set = ExtResource("1_hqdtb")
